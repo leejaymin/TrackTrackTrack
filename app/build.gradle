@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 'Google Inc.:Google APIs:10'
+    buildToolsVersion "26.0.1"
+
+    defaultConfig {
+        applicationId "com.TrackTrackTrack"
+        minSdkVersion 7
+        targetSdkVersion 7
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_5
+            targetCompatibility JavaVersion.VERSION_1_5
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile files('lib/achartengine-0.5.0.jar')
+}

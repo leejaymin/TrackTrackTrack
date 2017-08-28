@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="wrap_content"
+  android:layout_height="wrap_content">
+    
+    <com.google.android.maps.MapView
+	android:id="@+id/exercise_map"
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content"
+	android:apiKey="0jE5CcxbaQok91EzwUX2LwMXIxjCfjGf7Ou-jgA"
+	android:clickable="true"
+	android:layout_weight="35"
+	/>
+	
+</LinearLayout>

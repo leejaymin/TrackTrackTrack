@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+  	android:title="GPS 환경설정 카테고리">
+  <ListPreference
+  	android:key="GpsRate"
+  	android:title="GPS 수신 빈도"
+  	android:summary="운동 종류에 따른 정확한 측정을 위해 수신 빈도를 조절 합니다."
+    android:entries="@array/gps_rate_options"
+    android:entryValues="@array/gps_rate_values"
+    android:dialogTitle="GPS frequency"
+    android:defaultValue="3000"
+  />
+  </PreferenceCategory>
+  <PreferenceCategory
+  	android:title="가속도 센서 환경설정 카테고리">	
+    <CheckBoxPreference
+    android:key="AcceleState"
+    android:title="가속도 센서 활성/비활성"
+    android:summary="자전거 운동일 경우 비 활성화 시키시면 베터리 소모를 줄일 수 있습니다." 
+    android:defaultValue="false"
+    /> 
+    <ListPreference
+  	android:key="AcceleRate"
+  	android:title="센서 민감도"
+  	android:summary="걸음 수를 정확히 측정 하기 위해 센서의 민감도를 조절 합니다. 빠른 걸음 일수록 센서 민감도가 떨어 집니다."
+    android:entries="@array/Accele_rate_options"
+    android:entryValues="@array/Accele_rate_values"
+    android:dialogTitle="Accelerometer Frequency"
+    android:defaultValue="40"
+    /> 
+  </PreferenceCategory>
+  <PreferenceCategory
+	android:title="사용자 상태 정보 카테고리">
+  <EditTextPreference
+  	android:key="Age"
+  	android:title="나이"
+  	android:summary="정확한 칼로리 측정을 위해서 나이를 입력 하세요. 기본 20세"
+  	android:defaultValue="20"
+  />
+  <EditTextPreference
+  	android:key="Weight"
+  	android:title="몸무게"
+  	android:summary="정확한 칼로리 측정을 위해서 몸무게를 입력 하세요. 기본 60kg"
+  	android:defaultValue="60"
+  />  
+  </PreferenceCategory>
+</PreferenceScreen>

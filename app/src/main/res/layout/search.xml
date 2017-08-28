@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="5pt"
+    >
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="운동 경로 이름 입력 하세요."
+    />
+<EditText
+    android:id="@+id/track_name"  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    />
+<TextView    
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="운동 카테고리 입력 하세요."
+    />
+<EditText
+    android:id="@+id/exercise_type"  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    />
+<TextView  
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="운동 설명을 입력 하세요."
+    />
+<EditText
+    android:id="@+id/track_decription"  
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent" 
+    />
+</LinearLayout>

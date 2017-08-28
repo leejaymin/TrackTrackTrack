@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="achartengine-0.5.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/lib/achartengine-0.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

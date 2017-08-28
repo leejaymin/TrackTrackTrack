@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/stats_root"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  android:layout_width="fill_parent">
+
+  <ScrollView
+    android:id="@+id/scrolly"
+    android:layout_height="wrap_content"
+    android:layout_width="fill_parent">
+
+    <TableLayout
+      android:id="@+id/stats_table"
+      android:layout_height="wrap_content"
+      android:stretchColumns="1,4"
+      android:layout_width="fill_parent">
+      
+      <!-- Total GPS State -->
+      <TableRow>
+        <TextView
+          android:id="@+id/gps_state_label"
+          android:layout_span="5"
+          android:text="@string/gps_state_label" />
+      </TableRow>
+      <TableRow
+        android:background="@color/stat_label_background">
+        <TextView
+          android:gravity="center_vertical"
+          android:id="@+id/state_register"
+          android:layout_column="1"
+          android:layout_marginBottom="-13dip"
+          android:layout_marginTop="-13dip"
+          android:layout_span="5"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="50sp"/>
+      </TableRow>
+      
+      <!-- 총거리와 순간 속도 -->
+      <TableRow
+        android:padding="1dip">
+        <TextView
+          android:id="@+id/total_distance_label"
+          android:layout_column="1"
+          android:layout_span="3"
+          android:text="@string/total_distance_label" />
+        <TextView
+          android:id="@+id/now_speed_label"
+          android:layout_column="4"
+          android:layout_span="2"
+          android:text="@string/now_speed_label" />
+      </TableRow>
+      <TableRow
+        android:background="@color/stat_label_background">
+        <TextView
+          android:gravity="right"
+          android:id="@+id/total_distance_register"
+          android:layout_column="1"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="40sp" />
+        <TextView
+          android:gravity="left"
+          android:id="@+id/total_distance_unit_label"
+          android:layout_column="2"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/meter"
+          android:textColor="@color/stat_label_text" />
+        <!-- 거리와 현재 속력 사이의 검정색 -->  
+        <TextView
+          android:background="@color/black"
+          android:layout_column="3"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:layout_width="5dip"
+          android:textSize="40sp" />
+        <!-- 속력을 실제로 표시한다. --> 
+        <TextView
+          android:gravity="right"
+          android:id="@+id/now_speed_register"
+          android:layout_column="4"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="40sp" />
+        <LinearLayout
+          android:gravity="bottom"
+          android:layout_column="5"
+          android:layout_width="wrap_content"
+          android:lines="1"
+          android:orientation="vertical">
+          <!-- 속도/시간 --> 
+          <TextView
+            android:id="@+id/max_speed_unit_label_top"
+            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-1dip"
+            android:layout_marginTop="-1dip"
+            android:layout_width="wrap_content"
+            android:textColor="@color/stat_label_text" 
+            android:text="@string/meter"
+            />
+          <!-- 가운데의 막대기 --> 
+          <TextView
+            android:background="@color/black"
+            android:layout_height="3dip"
+            android:layout_width="fill_parent" />
+          <!-- 속도/시간 --> 
+          <TextView
+            android:id="@+id/max_speed_unit_label_bottom"
+            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-1dip"
+            android:layout_marginTop="-1dip"
+            android:layout_width="wrap_content"
+            android:textColor="@color/stat_label_text" 
+            android:text="@string/sec"
+            />
+        </LinearLayout>
+      </TableRow>
+
+      <!-- 총시간과 평균 속도를 출력 한다. -->
+      <TableRow>
+        <TextView
+          android:id="@+id/track_time_label"
+          android:layout_column="1"
+          android:layout_span="3"
+          android:text="@string/total_time_label" />
+        <TextView
+          android:id="@+id/average_speed_label"
+          android:layout_column="4"
+          android:layout_span="2"
+          android:text="@string/average_speed_label" />
+      </TableRow>
+      <TableRow
+        android:background="@color/stat_label_background">
+        <TextView
+          android:gravity="right"
+          android:id="@+id/total_time_register"
+          android:layout_column="1"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="40sp" />
+          <TextView
+		android:gravity="left"
+		android:id="@+id/total_time_unit_label"
+		android:layout_column="2"
+		android:layout_marginBottom="-9dip"
+		android:layout_marginTop="-9dip"
+		android:text="@string/sec"
+		android:textColor="@color/stat_label_text" 
+		/>
+        <TextView
+          android:background="@color/black"
+          android:layout_column="3"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:layout_width="5dip"
+          android:textSize="40sp" />
+        <TextView
+          android:gravity="right"
+          android:id="@+id/average_speed_register"
+          android:layout_column="4"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="40sp" />
+        <LinearLayout
+          android:gravity="bottom"
+          android:layout_column="5"
+          android:layout_width="wrap_content"
+          android:lines="1"
+          android:orientation="vertical">
+          <TextView
+            android:id="@+id/average_speed_unit_label_top"
+            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-1dip"
+            android:layout_marginTop="-1dip"
+            android:layout_width="wrap_content"
+            android:textColor="@color/stat_label_text" 
+            android:text="@string/meter"
+            />
+          <TextView
+            android:background="@color/black"
+            android:layout_height="3dip"
+            android:layout_width="fill_parent" />
+          <TextView
+            android:id="@+id/average_speed_unit_label_bottom"
+            android:gravity="bottom"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="-1dip"
+            android:layout_marginTop="-1dip"
+            android:layout_width="wrap_content"
+            android:textColor="@color/stat_label_text" 
+            android:text="@string/sec"
+            />
+        </LinearLayout>
+      </TableRow>
+
+      <!-- Latitude and Longitude -->
+      <TableRow>
+        <TextView
+          android:layout_column="1"
+          android:layout_span="3"
+          android:text="@string/latitude_label" />
+        <TextView
+          android:layout_column="4"
+          android:layout_span="2"
+          android:text="@string/longitude_label" />
+      </TableRow>
+      <TableRow
+        android:background="@color/stat_label_background">
+        <TextView
+          android:gravity="right"
+          android:id="@+id/latitude_register"
+          android:layout_column="1"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="-5dip"
+          android:layout_marginTop="-5dip"
+          android:layout_width="fill_parent"
+          android:layout_span="2"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="20sp" />
+        <TextView
+          android:background="@color/black"
+          android:layout_column="3"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:layout_width="5dip"
+          android:textSize="20sp" />
+        <TextView
+          android:gravity="right"
+          android:id="@+id/longitude_register"
+          android:layout_column="4"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="-5dip"
+          android:layout_marginTop="-5dip"
+          android:layout_width="fill_parent"
+          android:layout_span="2"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="20sp" />
+      </TableRow>
+      
+      <!-- Walk Step and Kcal  -->
+      <TableRow>
+        <TextView
+          android:id="@+id/walk_step_label"
+          android:layout_column="1"
+          android:layout_span="3"
+          android:text="@string/walking_label" />
+        <TextView
+          android:id="@+id/calorie_label"
+          android:layout_column="4"
+          android:layout_span="2"
+          android:text="@string/calorie_label" />
+      </TableRow>
+      
+      <TableRow
+        android:background="@color/stat_label_background">
+        <TextView
+          android:gravity="right"
+          android:id="@+id/step_register"
+          android:layout_column="1"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="40sp" />
+        <TextView
+		  android:gravity="left"
+		  android:id="@+id/step_unit_label"
+		  android:layout_column="2"
+		  android:layout_marginBottom="-9dip"
+		  android:layout_marginTop="-9dip"
+		  android:text="@string/step"
+		  android:textColor="@color/stat_label_text" 
+		/>
+        <TextView
+          android:background="@color/black"
+          android:layout_column="3"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:layout_width="5dip"
+          android:textSize="40sp" />
+        <TextView
+          android:gravity="right"
+          android:id="@+id/total_calorie_register"
+          android:layout_column="4"
+          android:layout_marginBottom="-9dip"
+          android:layout_marginTop="-9dip"
+          android:text="@string/unknown"
+          android:textColor="@color/stat_label_text"
+          android:textSize="40sp" />
+        <TextView
+		  android:gravity="left"
+		  android:id="@+id/calorie_unit_label"
+		  android:layout_column="5"
+		  android:layout_marginBottom="-9dip"
+		  android:layout_marginTop="-9dip"
+		  android:text="@string/kcal"
+		  android:textColor="@color/stat_label_text" 
+		/>
+      </TableRow>
+      
+      <!-- Button label  -->
+      <TableRow>
+        <TextView
+          android:id="@+id/walk_step_label"
+          android:layout_column="1"
+          android:layout_span="3"
+          android:text="@string/button_label" />
+      </TableRow>
+        	<LinearLayout
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+    	android:layout_weight="2"
+    	>  				
+    	<Button
+    		android:id="@+id/start_button"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		android:text="Track Recoding Start"
+    	/>
+        <Button
+    		android:id="@+id/pause_button"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_weight="1"
+    		android:text="Track Recoding Pause"
+    	/>
+    </LinearLayout>
+      <TableRow>
+    
+    </TableRow>
+    
+    </TableLayout>
+  </ScrollView>
+
+</RelativeLayout>
